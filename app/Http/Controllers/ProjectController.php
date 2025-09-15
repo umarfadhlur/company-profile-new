@@ -15,9 +15,9 @@ class ProjectController extends Controller
         return view('sections.portfolio', compact('projects'));
     }
 
-    public function show($id)
+    public function show($slug)
     {
-        $project = \App\Models\Project::with('photos')->findOrFail($id);
-        return view('sections.portfolio-details', compact('project'));
+        $project = Project::with('photos')->where('slug', $slug)->firstOrFail();
+        return view('portfolio-details', compact('project'));
     }
 }

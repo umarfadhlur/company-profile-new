@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use App\Models\Certification;
 
 class HomeController extends Controller
 {
@@ -12,7 +13,9 @@ class HomeController extends Controller
             $q->limit(1);
         }])->get();
 
-        return view('home', compact('projects'));
+        $certifications = Certification::all();
+
+        return view('home', compact('projects', 'certifications'));
     }
 
 }

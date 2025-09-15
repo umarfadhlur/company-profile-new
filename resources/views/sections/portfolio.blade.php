@@ -30,7 +30,9 @@
                     @endphp
 
                     <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-{{ $categorySlug }}">
-                        <img src="{{ $image }}" class="img-fluid" alt="{{ $project->project_name }}">
+                        <a href="{{ route('project.detail', $project->slug) }}">
+                            <img src="{{ asset('storage/' . $photo->photo_path) }}" class="img-fluid" alt="{{ $project->project_name }}">
+                        </a>
                         <div class="portfolio-info">
                             <h4>{{ $project->project_name }}</h4>
                             <p>{{ $project->scope_of_work }}</p>
@@ -42,7 +44,7 @@
                                 <i class="bi bi-zoom-in"></i>
                             </a>
 
-                            <a href="{{ route('portfolio.details', $project->id) }}"
+                            <a href="{{ route('project.detail', $project->slug) }}"
                                title="More Details"
                                class="details-link">
                                 <i class="bi bi-link-45deg"></i>

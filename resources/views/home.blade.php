@@ -8,12 +8,13 @@
     @include('sections.featured-services')
     @include('sections.values')
     @include('sections.about')
+    @include('sections.certifications')
     {{-- @include('sections.skills') --}}
     {{-- @include('sections.stats') --}}
     @include('sections.services')
+    @include('sections.portfolio')
     @include('sections.clients')
     {{-- @include('sections.testimonials') --}}
-    @include('sections.portfolio')
     {{-- @include('sections.team') --}}
     @include('sections.contact')
 @endsection
