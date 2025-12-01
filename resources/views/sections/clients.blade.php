@@ -34,11 +34,13 @@
                     }
                 }
             </script>
+
             <div class="swiper-wrapper align-items-center">
-                @for($i = 1; $i <= 8; $i++)
-                <div class="swiper-slide">
-                    <img src="{{ asset('assets/img/clients/client-' . $i . '.png') }}" class="img-fluid" alt="Client {{ $i }}">
-                </div>
+                @for ($i = 1; $i <= 8; $i++)
+                    <div class="swiper-slide">
+                        <img src="{{ asset('assets/img/clients/client-' . $i . '.png') }}" class="img-fluid"
+                            alt="{{ __('Client') }} {{ $i }}">
+                    </div>
                 @endfor
             </div>
         </div>
