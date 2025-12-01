@@ -64,5 +64,12 @@
     "Subject": "제목",
     "Message": "메시지",
     "Send Message": "메시지 보내기",
-    "Sending...": "전송 중..."
+    "Sending...": "전송 중...",
+    "Main Contractor": "메인 컨트랙터",
+    "Working Period": "작업 기간",
+    "Scope of Work": "작업 범위",
+    "Category of Work": "작업 분류",
+    "Project Photo": "프로젝트 사진",
+    "No photos available.": "사용 가능한 사진이 없습니다.",
+    "Back to Projects": "프로젝트 목록으로 돌아가기"
 }
