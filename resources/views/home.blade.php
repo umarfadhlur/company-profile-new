@@ -10,6 +10,7 @@
     @include('sections.featured-services')
     @include('sections.values')
     @include('sections.about')
+    @include('sections.history')
     @include('sections.certifications')
     @include('sections.services')
     @include('sections.portfolio')
