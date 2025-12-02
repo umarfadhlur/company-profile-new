@@ -4,9 +4,8 @@
     </div>
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
-
+        <div class="row gy-3 align-items-center">
+            <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
                 <p class="text-muted mb-3">
                     {{ __('Our company was founded in 2018 with the vision of becoming a trusted partner in the construction and maintenance service works industries.') }}
                 </p>
@@ -28,9 +27,16 @@
                 </p>
 
                 <h4 class="fw-bold text-center fst-italic">
-                    “{{ __('BUILDING DREAMS, CREATING REALITY') }}”
+                    "{{ __('BUILDING DREAMS, CREATING REALITY') }}"
                 </h4>
+            </div>
 
+            <div class="col-lg-6 d-flex justify-content-center align-items-center" data-aos="fade-up"
+                data-aos-delay="200">
+                <div style="max-width: 350px;">
+                    <img src="{{ asset('assets/img/history.png') }}" alt=""
+                        class="img-fluid rounded-3 shadow-sm">
+                </div>
             </div>
         </div>
     </div>

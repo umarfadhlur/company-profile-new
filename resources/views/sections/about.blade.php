@@ -5,8 +5,10 @@
 
     <div class="container">
         <div class="row gy-3">
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                <img src="{{ asset('assets/img/about.jpg') }}" alt="" class="img-fluid rounded-3 shadow-sm">
+            <div class="col-lg-6 d-flex justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
+                <div style="max-width: 350px;">
+                    <img src="{{ asset('assets/img/about.png') }}" alt="" class="img-fluid rounded-3 shadow-sm">
+                </div>
             </div>
 
             <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
