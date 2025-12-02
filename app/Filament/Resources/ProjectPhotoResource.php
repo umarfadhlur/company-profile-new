@@ -26,7 +26,7 @@ class ProjectPhotoResource extends Resource
                 Forms\Components\TextInput::make('project_id')
                     ->required()
                     ->numeric(),
-            Forms\Components\FileUpload::make('photo_path')
+                Forms\Components\FileUpload::make('photo_path')
                     ->image()
                     ->required()
                     ->disk('public')
@@ -38,9 +38,12 @@ class ProjectPhotoResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('project_id')
-                    ->numeric()
-                    ->sortable(),
+                Forms\Components\Select::make('project_id')
+                    ->label('Project')
+                    ->relationship('project', 'project_name')
+                    ->searchable()
+                    ->preload()
+                    ->required(),
                 Tables\Columns\ImageColumn::make('photo_path')
                     ->width(100),
                 Tables\Columns\TextColumn::make('created_at')
