@@ -8,16 +8,16 @@
     </ul>
 
     {{-- Language Switcher --}}
-    <div class="lang-switcher d-flex align-items-center ms-3">
-        <a href="{{ url('/lang/en') }}" class="me-2">
-            <img src="{{ asset('assets/flags/en.jpg') }}" alt="English"
-                class="flag-icon {{ app()->getLocale() === 'en' ? 'active-flag' : '' }}">
-        </a>
-        <a href="{{ url('/lang/ko') }}">
-            <img src="{{ asset('assets/flags/ko.png') }}" alt="Korean"
-                class="flag-icon {{ app()->getLocale() === 'ko' ? 'active-flag' : '' }}">
-        </a>
-    </div>
+    <!--<div class="lang-switcher d-flex align-items-center ms-3">-->
+    <!--    <a href="{{ url('/lang/en') }}" class="me-2">-->
+    <!--        <img src="{{ asset('assets/flags/en.jpg') }}" alt="English"-->
+    <!--            class="flag-icon {{ app()->getLocale() === 'en' ? 'active-flag' : '' }}">-->
+    <!--    </a>-->
+    <!--    <a href="{{ url('/lang/ko') }}">-->
+    <!--        <img src="{{ asset('assets/flags/ko.png') }}" alt="Korean"-->
+    <!--            class="flag-icon {{ app()->getLocale() === 'ko' ? 'active-flag' : '' }}">-->
+    <!--    </a>-->
+    <!--</div>-->
 
     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
 </nav>

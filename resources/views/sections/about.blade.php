@@ -6,8 +6,8 @@
     <div class="container">
         <div class="row gy-3">
             <div class="col-lg-6 d-flex justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
-                <div style="max-width: 350px;">
-                    <img src="{{ asset('assets/img/about.png') }}" alt="" class="img-fluid rounded-3 shadow-sm">
+                <div style="max-width: 600px;">
+                    <img src="{{ asset('assets/img/about.webp') }}" alt="" class="img-fluid rounded-3 shadow-sm">
                 </div>
             </div>
 

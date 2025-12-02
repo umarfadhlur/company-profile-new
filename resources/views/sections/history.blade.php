@@ -33,7 +33,7 @@
 
             <div class="col-lg-6 d-flex justify-content-center align-items-center" data-aos="fade-up"
                 data-aos-delay="200">
-                <div style="max-width: 350px;">
+                <div style="max-width: 600px;">
                     <img src="{{ asset('assets/img/history.png') }}" alt=""
                         class="img-fluid rounded-3 shadow-sm">
                 </div>
