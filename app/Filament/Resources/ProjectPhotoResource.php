@@ -3,29 +3,30 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ProjectPhotoResource\Pages;
-use App\Filament\Resources\ProjectPhotoResource\RelationManagers;
 use App\Models\ProjectPhoto;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class ProjectPhotoResource extends Resource
 {
     protected static ?string $model = ProjectPhoto::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-photo';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('project_id')
-                    ->required()
-                    ->numeric(),
+                Forms\Components\Select::make('project_id')
+                    ->label('Project')
+                    ->relationship('project', 'project_name')
+                    ->searchable()
+                    ->preload()
+                    ->required(),
+
                 Forms\Components\FileUpload::make('photo_path')
                     ->image()
                     ->required()
@@ -38,41 +39,29 @@ class ProjectPhotoResource extends Resource
     {
         return $table
             ->columns([
-                Forms\Components\Select::make('project_id')
+                Tables\Columns\TextColumn::make('project.project_name')
                     ->label('Project')
-                    ->relationship('project', 'project_name')
-                    ->searchable()
-                    ->preload()
-                    ->required(),
+                    ->sortable()
+                    ->searchable(),
+
                 Tables\Columns\ImageColumn::make('photo_path')
-                    ->width(100),
+                    ->width(120)
+                    ->label('Photo'),
+
                 Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->label('Created')
+                    ->dateTime(),
+
                 Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-            ])
-            ->filters([
-                //
+                    ->label('Updated')
+                    ->dateTime(),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                Tables\Actions\DeleteBulkAction::make(),
             ]);
-    }
-
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
     }
 
     public static function getPages(): array
